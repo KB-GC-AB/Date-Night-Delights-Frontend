@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Recipe from "./pages/Recipe";
-import ListRecipe from "./pages/ListRecipe";
-import AllRecipes from "./pages/AllRecipes";
-import SearchRecipe from "./pages/SearchRecipe"
+import NewRecipe from "./pages/NewRecipe";
+import AllRecipes from "./pages/Listings";
+import UpdateRecipe from "./pages/UpdateRecipe"
 //container comp
 function App() {
   let routes;
@@ -11,9 +11,9 @@ function App() {
   routes = (
     <Routes>
       <Route exact={true} path="/" element={<AllRecipes />} />
-      <Route path="/new" element={<ListRecipe />} />
+      <Route path="/new" element={<NewRecipe />} />
       <Route path="/:id" element={<Recipe />} />
-      <Route path="/:id" element={<SearchRecipe />} />
+      <Route path="/:id" element={<UpdateRecipe />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
