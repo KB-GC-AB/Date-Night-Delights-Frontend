@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./NewRecipe.css";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function NewRecipe() {
   const [nameState, setNameState] = useState("");
@@ -8,6 +10,7 @@ function NewRecipe() {
   const [instructionsState, setInstructionsState] = useState("");
 
   const [imageState, setImageState] = useState("");
+  const navigate = useNavigate();
 
   //Here we are making a dynamic onChangeHandler that'll accept a state updater
   const onChangeHandler = (e, setValue) => {
@@ -35,16 +38,18 @@ function NewRecipe() {
     };
 
     const responseData = await fetch(
-      "https://people-api-qn7s.onrender.com/people/",
+      "http://localhost:4000/recipes",
       options
     );
 
     const newRecipeObj = await responseData.json();
     console.log(newRecipeObj);
+    navigate("/")
   }; //end of submitH
 
   return (
     <div className="newrecipe">
+      <Navbar></Navbar>
       <form onSubmit={onSubmitHandler}>
         <input
           type="text"

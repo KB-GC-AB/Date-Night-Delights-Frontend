@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import "./UpdateRecipe.css";
 import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
 
 function UpdateRecipe() {
   const [nameState, setNameState] = useState("");
@@ -10,7 +11,7 @@ function UpdateRecipe() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const url = `https://people-api-qn7s.onrender.com/people/${id}`;
+  const url = `http://localhost:4000/recipes/${id}`;
   //---------fetch data here
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -94,6 +95,7 @@ function UpdateRecipe() {
 
   return (
     <div className="newrecipe">
+        <Navbar></Navbar>
       <form onSubmit={onSubmitHandler}>
         <input
           type="text"
@@ -111,7 +113,7 @@ function UpdateRecipe() {
         />
         <input
           type="text"
-          value={ingeredientsState}
+          value={ingredientsState}
           name="ingredients"
           placeholder="ingredients"
           onChange={(e) => onChangeHandler(e, setIngredientsState)}

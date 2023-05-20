@@ -8,7 +8,7 @@ function Recipe(props) {
     <li className="recipe">
       <NavLink to={`/${recipe._id}`} state={recipe}>
         <h3>{recipe.name}</h3>
-        <img className="food" src={person.image} alt="food" />
+        <img className="food" src={recipe.image} alt="food" />
       </NavLink>
     </li>
   );

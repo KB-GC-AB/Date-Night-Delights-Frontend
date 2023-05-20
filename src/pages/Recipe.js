@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./Recipe.css";
+import "./Recipe.css"
+import Navbar from "../components/Navbar";
 
 function Recipe() {
   const [recipeState, setRecipeState] = useState(null);
@@ -9,7 +10,7 @@ function Recipe() {
 
   const { id } = useParams();
   console.log(useParams());
-  const url = `https://people-api-qn7s.onrender.com/people/${id}`; //fetch a person by id this will reach our server.
+  const url = `http://localhost:4000/recipes/${id}`; //fetch a person by id this will reach our server.
 
   //useeffect will only run once []
   useEffect(() => {
@@ -22,8 +23,8 @@ function Recipe() {
       console.log("going to fetch recipe with id of: ", id);
       try {
         const responseData = await fetch(url);
-        const recipeData = await responseData.json(); //converting our html response that we got from the server into a useable person {object}.
-        console.log(recipeData); //usable person
+        const recipeData = await responseData.json(); //converting our html response that we got from the server into a useable recipe{object}.
+        console.log(recipeData); //usable recipe
         console.log(
           "Setting state, about to rerender..(not remount, just re-render)."
         );
@@ -38,12 +39,12 @@ function Recipe() {
 
   return (
     <div className="recipe">
+      <Navbar></Navbar>
       {console.log("#1: 🖼️Rendering component...")}
       {recipeState ? (
         <>
           <div className="recipe">
             <h2>{recipeState.name}</h2>
-            <h3>{recipeState.title}</h3>
             <div className="recipe-pic">
               <img
                 className="delight-pic"

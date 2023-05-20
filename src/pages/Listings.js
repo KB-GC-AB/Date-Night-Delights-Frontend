@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Listings.css";
 import { NavLink } from "react-router-dom";
 import Recipe from "../components/Recipe";
+import Navbar from "../components/Navbar";
+
 //index page that shows all of our people on display
 //contain componenet to fetch and display people
 function Listings() {
   const [listings, setListings] = useState(null);
 
-  const URL = "https://people-api-qn7s.onrender.com/peop/";
+  const URL = "http://localhost:4000/recipes";
 
   useEffect(() => {
     //useeffect will render once when the compon is mounted.
@@ -36,8 +38,10 @@ function Listings() {
   }
 
   return (
+
     <div className="listings">
-      <h2>All the Recipes</h2>
+      {/* <h2>All the Recipes</h2> */}
+      <Navbar></Navbar>
       {listings ? (
         <ul className="recipe-list">{ListingsList}</ul>
       ) : (
