@@ -1,0 +1,50 @@
+.newrecipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .newrecipe form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .newrecipe input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+  }
+  
+  .newrecipe input[type="submit"],
+  .newrecipe input[type="button"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .newrecipe input[type="submit"]:hover,
+  .newrecipe input[type="button"]:hover {
+    background-color: #555;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  

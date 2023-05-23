@@ -1,19 +1,28 @@
-.navbar {
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #f2f2f2;
     padding: 20px;
-    border: 2px solid gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
-  .logo {
-    display: inline-block;
+  .navbar h1 {
+    margin: 0;
+    font-size: 18px;
   }
   
-  .nav-items {
-    display: flex;
+  .navbar .list {
+    font-weight: bold;
   }
   
-  .nav-items a {
-    margin-left: 5px;
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
   }
+  
+  .navbar a:hover {
+    color: #000;
+  }
+  
