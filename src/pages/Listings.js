@@ -38,9 +38,7 @@ function Listings() {
   }
 
   return (
-
     <div className="listings">
-      {/* <h2>All the Recipes</h2> */}
       <Navbar></Navbar>
       {listings ? (
         <ul className="recipe-list">{ListingsList}</ul>

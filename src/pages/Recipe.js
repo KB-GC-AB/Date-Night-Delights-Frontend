@@ -43,7 +43,7 @@ function Recipe() {
       {console.log("#1: 🖼️Rendering component...")}
       {recipeState ? (
         <>
-          <div className="recipe">
+          <div className="recipe-data">
             <h2>{recipeState.name}</h2>
             <div className="recipe-pic">
               <img

@@ -97,28 +97,36 @@ function UpdateRecipe() {
     <div className="newrecipe">
         <Navbar></Navbar>
       <form onSubmit={onSubmitHandler}>
+      <label htmlFor="name">Name</label>
         <input
+        id="name"
           type="text"
           value={nameState}
           name="name"
           placeholder="name"
           onChange={(e) => onChangeHandler(e, setNameState)}
         />
+        <label htmlFor="image">Image URL</label>
         <input
+        id="image"
           type="text"
           value={imageState}
           name="image"
           placeholder="image URL"
           onChange={(e) => onChangeHandler(e, setImageState)}
         />
+        <label htmlFor="ingredients">Ingredients</label>
         <input
+        id="ingredients"
           type="text"
           value={ingredientsState}
           name="ingredients"
           placeholder="ingredients"
           onChange={(e) => onChangeHandler(e, setIngredientsState)}
         />
+        <label htmlFor="instructions">Instructions</label>
         <input
+        id="instructions"
           type="text"
           value={instructionsState}
           name="instructions"
@@ -126,11 +134,11 @@ function UpdateRecipe() {
           onChange={(e) => onChangeHandler(e, setInstructionsState)}
         />
 
-        <input type="submit" value="✅UPDATE RECIPE" />
+        <input type="submit" value="UPDATE RECIPE" />
         <input
           onClick={onDeleteHandler}
           type="button"
-          value="😵DELETE Recipe"
+          value="DELETE RECIPE"
         />
       </form>
     </div>
