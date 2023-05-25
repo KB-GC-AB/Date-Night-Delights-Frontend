@@ -53,8 +53,9 @@ function Recipe() {
               />
             </div>
 
-            <h3>Ingrdients:</h3>
+            <h3>Ingredients:</h3>
             <ul>{recipeState.ingredients}</ul>
+            <h3>Instructions:</h3>
             <li>{recipeState.instructions}</li>
             <Link to={`/${recipeState._id}/edit`}>
               <button>EDIT</button>
