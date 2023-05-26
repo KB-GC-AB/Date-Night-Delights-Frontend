@@ -27,12 +27,19 @@
   }
 
 input[type="text"] {
-    width: 23.5%;
     border: 1px solid #ccc;
 }
 
 button[type="submit"] {
-    width: 25%;
     border: 1px solid #ccc;
 }
 
+form {
+    justify-self: center;
+    width: 300px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+}

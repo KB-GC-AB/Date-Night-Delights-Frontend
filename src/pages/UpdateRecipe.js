@@ -2,10 +2,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./UpdateRecipe.css";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import ImageUpload from "../components/ImageUpload";
 
 function UpdateRecipe() {
   const [nameState, setNameState] = useState("");
-  const [imageState, setImageState] = useState("");
+  const [image, setImage] = useState("");
   const [ingredientsState, setIngredientsState] = useState("");
   const [instructionsState, setInstructionsState] = useState("");
   const { id } = useParams();
@@ -27,7 +28,7 @@ function UpdateRecipe() {
         const { name,image, ingredients, instructions } = recipeData;
 
         setNameState(name);
-        setImageState(image);
+        setImage(image);
         setIngredientsState(ingredients);
         setInstructionsState(instructions);
       } catch (error) {}
@@ -50,7 +51,7 @@ function UpdateRecipe() {
     event.preventDefault();
     const updatedRecipe = {
       name: nameState,
-      image: imageState,
+      image: image,
       ingredients: ingredientsState,
       instructions: instructionsState,
     };
@@ -107,13 +108,10 @@ function UpdateRecipe() {
           onChange={(e) => onChangeHandler(e, setNameState)}
         />
         <label htmlFor="image">Image URL</label>
-        <input
-        id="image"
-          type="text"
-          value={imageState}
-          name="image"
-          placeholder="image URL"
-          onChange={(e) => onChangeHandler(e, setImageState)}
+        <ImageUpload 
+        setImage={setImage}
+        initialState={image}
+        prevImg={image}
         />
         <label htmlFor="ingredients">Ingredients</label>
         <input

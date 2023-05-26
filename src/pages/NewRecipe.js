@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./NewRecipe.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import ImageUpload from "../components/ImageUpload";
 
 function NewRecipe() {
   const [nameState, setNameState] = useState("");
   const [ingredientsState, setIngredientsState] = useState("");
 
   const [instructionsState, setInstructionsState] = useState("");
-
+  const [image, setImage] = useState("");
   const [imageState, setImageState] = useState("");
   const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ function NewRecipe() {
       name: nameState,
       ingredients: ingredientsState,
       instructions: instructionsState,
-      image: imageState,
+      image: image,
     };
 
     console.log("New Recipe, yo: ", newRecipe);
@@ -58,13 +59,12 @@ function NewRecipe() {
           placeholder="name"
           onChange={(e) => onChangeHandler(e, setNameState)}
         />
-        <input
-          type="text"
-          value={imageState}
-          name="image"
-          placeholder="image URL"
-          onChange={(e) => onChangeHandler(e, setImageState)}
-        />
+
+        <ImageUpload 
+        setImage={setImage}
+        initialState="https://i.ibb.co/K94DwZc/empty.jpg"
+      />
+
         <input
           type="text"
           value={ingredientsState}
