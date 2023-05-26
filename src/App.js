@@ -22,10 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* App.js
-      <header>
-        <h1>Date Night Delights</h1>
-      </header> */}
       <main>{routes}</main>
     </div>
   );
