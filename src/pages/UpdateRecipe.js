@@ -19,8 +19,8 @@ function UpdateRecipe() {
       console.log("going to fetch recipe with id of: ", id);
       try {
         const responseData = await fetch(url);
-        const recipeData = await responseData.json(); //converting our html response that we got from the server into a useable person {object}.
-        console.log(recipeData); //usable person
+        const recipeData = await responseData.json(); //converting our html response that we got from the server into a useable recipe {object}.
+        console.log(recipeData); //usable recipe
         console.log(
           "Setting state, about to rerender..(not remount, just re-render)."
         );

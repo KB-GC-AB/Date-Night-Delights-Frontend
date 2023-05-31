@@ -10,7 +10,7 @@ function Recipe() {
 
   const { id } = useParams();
   console.log(useParams());
-  const url = `http://localhost:4000/recipes/${id}`; //fetch a person by id this will reach our server.
+  const url = `http://localhost:4000/recipes/${id}`; //fetch a recipe by id this will reach our server.
 
   //useeffect will only run once []
   useEffect(() => {
