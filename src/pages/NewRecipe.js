@@ -52,6 +52,7 @@ function NewRecipe() {
     <div className="newrecipe">
       <Navbar></Navbar>
       <form onSubmit={onSubmitHandler}>
+      <label htmlFor="name">Name</label>
         <input
           type="text"
           value={nameState}
@@ -59,12 +60,12 @@ function NewRecipe() {
           placeholder="name"
           onChange={(e) => onChangeHandler(e, setNameState)}
         />
-
+        <label htmlFor="image">Image URL</label>
         <ImageUpload 
         setImage={setImage}
         initialState="https://i.ibb.co/K94DwZc/empty.jpg"
       />
-
+        <label htmlFor="ingredients">Ingredients</label>
         <input
           type="text"
           value={ingredientsState}
@@ -72,6 +73,7 @@ function NewRecipe() {
           placeholder="ingredients"
           onChange={(e) => onChangeHandler(e, setIngredientsState)}
         />
+        <label htmlFor="instructions">Instructions</label>
         <input
           type="text"
           value={instructionsState}
